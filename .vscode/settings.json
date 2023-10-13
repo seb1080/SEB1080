@@ -1,7 +1,10 @@
 {
     "cSpell.words": [
         "elif",
-        "Geospatial"
+        "geospatial",
+        "Geospatial",
+        "Markedown",
+        "SRID"
     ],
     "[python]": {
         "editor.defaultFormatter": "ms-python.autopep8"
