@@ -98,7 +98,7 @@ npm init -author-name 'Seb1080' // to set the author name default as "Seb1080"
 
 ### npm Scripts
 
-Scripts can serve as single source of commadn to launch tasks in a project.
+Scripts can serve as single source of command to launch tasks in a project.
 **prehook** and **posthook** allow to run scripts before and after a npm script.
 
 ```bash
@@ -215,7 +215,7 @@ Scripts can serve as single source of commadn to launch tasks in a project.
 **References**
 
 [Course Source](https://app.pluralsight.com/library/courses/npm-build-tool-introduction)
-[Npm asa build tool](https://www.keithcirkel.co.uk/how-to-use-npm-as-a-build-tool/)
+[Npm as a build tool](https://www.keithcirkel.co.uk/how-to-use-npm-as-a-build-tool/)
 
 ### Publishing on npm
 

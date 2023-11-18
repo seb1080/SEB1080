@@ -1,6 +1,7 @@
 # DOCKER CHEATSHEAT
 
-docker build -t friendlyname . # Create image using this directory's Dockerfile
+```bash
+docker build -t friendlyname .  # Create image using this directory's Dockerfile
 docker run -p 4000:80 friendlyname # Run "friendlyname" mapping port 4000 to 80
 docker run -d -p 4000:80 friendlyname # Same thing, but in detached mode
 docker exec -it [container-id] bash or docker exec --interactive --tty bash # Enter a running container, (-i) Keep STDIN open, (-t) Allocates a pseudo terminal connected to the container.
@@ -21,9 +22,11 @@ docker system prune # Remove all unused containers, networks, images (both dangl
 docker system prune -a # Remove all unused containers, networks, images not just dangling ones (Docker 17.06.1-ce and superior)
 docker volume prune # Remove all unused local volumes
 docker network prune # Remove all unused networks
+```
 
 ## DOCKER COMPOSE
 
+```bash
 docker-compose up # Create and start containers
 docker-compose up -d # Create and start containers in detached mode
 docker-compose down # Stop and remove containers, networks, images, and volumes
@@ -35,26 +38,32 @@ docker-compose config # Validate and view the Compose file
 docker-compose scale <service_name>=<replica> # Scale special service(s)
 docker-compose top # Display the running processes
 docker-compose run -rm -p 2022:22 web bash # Start web service and runs bash as its command, remove old container.
+```
 
 ## DOCKER SERVICES
 
+```bash
 docker service create <options> <image> <command> # Create new service
 docker service inspect --pretty <service_name> # Display detailed information Service(s)
 docker service ls # List Services
 docker service ps # List the tasks of Services
 docker service scale <service_name>=<replica> # Scale special service(s)
 docker service update <options> <service_name> # Update Service options
+```
 
 ## DOCKER STACK
 
+```bash
 docker stack ls # List all running applications on this Docker host
 docker stack deploy -c <composefile> <appname> # Run the specified Compose file
 docker stack services <appname> # List the services associated with an app
 docker stack ps <appname> # List the running containers associated with an app
 docker stack rm <appname> # Tear down an application
+```
 
 ## DOCKER MACHINE
 
+```bash
 docker-machine create --driver virtualbox myvm1 # Create a VM (Mac, Win7, Linux)
 docker-machine create -d hyperv --hyperv-virtual-switch "myswitch" myvm1 # Win10
 docker-machine env myvm1 # View basic information about your node
@@ -69,6 +78,7 @@ docker-machine stop $(docker-machine ls -q)                               # Stop
 docker-machine rm $(docker-machine ls -q) # Delete all VMs and their disk images
 docker-machine scp docker-compose.yml myvm1:~ # Copy file to node's home dir
 docker-machine ssh myvm1 "docker stack deploy -c <file> <app>" # Deploy an app
+```
 
 **Reference**
 
@@ -80,7 +90,7 @@ docker-machine ssh myvm1 "docker stack deploy -c <file> <app>" # Deploy an app
 
 [15 Docker Commands You Should Know, explain the flags](https://towardsdatascience.com/15-docker-commands-you-should-know-970ea5203421)
 
-## POSTGERS in DOCKER
+## POSTGIS in DOCKER
 
 Create the docker container.
 
@@ -120,34 +130,4 @@ postgres-# \l
            |          |          |            |            | postgres=CTc/postgres
  template1 | postgres | UTF8     | en_US.utf8 | en_US.utf8 | =c/postgres          +
            |          |          |            |            | postgres=CTc/postgres
-```
-
-Then test the connection.
-
-```bash
-psql -h localhost -p 5432 -U postgres -W
-```
-
-```bash
-host: localhost
-port: 5432
-database: postgres
-user: postgres
-password: pwd
-```
-
-Make sure postGIS is installed.
-
----
-
-```bash
-
-```
-
----
-
-# Postgresql Cheatsheet
-
-```sql
-\c <db_name> --return db name
 ```
