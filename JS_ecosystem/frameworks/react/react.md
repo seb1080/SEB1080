@@ -1,5 +1,7 @@
 # React.js
 
+[Learn react](https://react.dev/learn)
+
 Hello World!
 
 ```js
@@ -39,7 +41,7 @@ const element = <img src={user.avatarUrl} />;
 
 ## Rendering Elements
 
-The JSX expression represent 'React elements'. Don't confuse elements with components. Elements are the block that build the compoments.
+The JSX expression represent 'React elements'. Don't confuse elements with components. Elements are the block that build the components.
 
 React elements are immutable, once create you can't change its children or attributes.
 
@@ -56,11 +58,16 @@ const user = {
 };
 
 function getLocation() {
+  let content
   if (!user.location) {
-    return "Unknow";
+    content = <div>Empty</div>;
+  } else {
+    content = <div>Some location</div>
   }
-  return user.location;
+
+  return content;
 }
+
 const element = <h1>Hello, {user.name}</h1>;
 
 const template = (
